@@ -12,7 +12,7 @@ def copyanything(src, dst):
             raise
 
 
-build = "./build"
+build = "./docs"
 index = "index.md"
 
 if os.path.exists(build) and os.path.isdir(build):
