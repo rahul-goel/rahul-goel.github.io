@@ -7,6 +7,6 @@ You can find me on:
 - [github](https://www.github.com/rahul-goel)
 - [codeforces](https://www.codeforces.com/profile/rahulgoel)
 - [instagram](https://www.instagram.com/__lankylad__)
-- [mail](rahulgoellko@gmail.com)
+- [rahulgoellko@gmail.com](mailto:rahulgoellko@gmail.com)
 
 Things you'll find here:

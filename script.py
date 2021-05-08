@@ -18,7 +18,7 @@ index = "index.md"
 if os.path.exists(build) and os.path.isdir(build):
     shutil.rmtree(build)
 
-copyanything("./src", "./build")
+copyanything("./src", build)
 
 for root, dirs, files in os.walk(build):
     for f in files:
