@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Linux</title>
+  <title>Zathura Saves My Eyes</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -20,10 +20,38 @@
   <![endif]-->
 </head>
 <body>
-<h1>Linux</h1>
-<p>Arch Linux + DWM is what I use. Here I&#39;ll put whatever I find useful in my linux setup.</p>
-<ul>
-<li><a href="./Zathura%20Saves%20My%20Eyes">Zathura Saves My Eyes</a></li>
-</ul>
+<h1>Zathura Saves My Eyes</h1>
+<p>Zathura is a document viewer and I use it to view PDFs. Until now, I was using the default inverted color mode (called recolor in zathura). It basically flipped black to white and white to black. It was dark mode but the contrast was so high that it still hurt my eyes. I wanted a dark mode with a dark greyish background and a pale-brownish white foreground color.</p>
+<p>And it was just one search away. Basically I only have to set the <code>recolor-darkcolor</code> and <code>recolor-lightcolor</code> values and done. I used the two gruvbox colors for the document and changed a the colors of the statusbar, inputbar and completion bar too to gruvbox. So easy on eyes. Such a huge relief. It was only one search away. I could have done it before and saved myself from a lot of strain I guess.</p>
+<p>Anyway here is my zathurrc as of now.</p>
+<pre><code>set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+set selection-clipboard clipboard
+
+set default-bg &quot;#555555&quot;
+
+set recolor-keephue
+set recolor-lightcolor &quot;#282828&quot;
+set recolor-darkcolor &quot;#ebdbb2&quot;
+
+set statusbar-bg &quot;#282828&quot;
+set statusbar-fg &quot;#8ec07c&quot;
+set completion-bg &quot;#282828&quot;
+set completion-fg &quot;#8ec07c&quot;
+set completion-highlight-bg &quot;#add8e6&quot;
+set inputbar-bg &quot;#282828&quot;
+set inputbar-fg &quot;#8ec07c&quot;
+
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print</code></pre>
 </body>
 </html>

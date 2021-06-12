@@ -32,9 +32,9 @@ for root, dirs, files in os.walk(build):
                 with open(mdname, "a") as f:
                     f.write("\n")
                     for d in dirs:
-                        f.write(f"- [{d}](./{d})\n")
+                        f.write(f"- [{d}](./{d.replace(' ', '%20')})\n")
                     f.write("\n")
                     f.close()
-            command = f'pandoc -f commonmark -t html5 --resource-path {root} -s {mdname} -o {htmlname} --self-contained --css=style.css --metadata pagetitle="{dirname}"'
+            command = f'pandoc -f commonmark -t html5 --resource-path "{root}" -s "{mdname}" -o "{htmlname}" --self-contained --css=style.css --metadata pagetitle="{dirname}"'
             os.system(command)
             os.remove(mdname)
