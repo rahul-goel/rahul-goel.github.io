@@ -58,6 +58,7 @@ a {
     text-decoration: underline; }
 
 pre {
+  white-space: pre-wrap;
   background-color: var(--color3);
   border-radius: 3px;
   font-size: 85%;
