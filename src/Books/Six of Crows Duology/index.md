@@ -180,3 +180,80 @@ And that is a wrap for the first book. I might not be able to write what I felt
 about the characters like this again for the second book. So maybe I'll record
 my thoughts after each chapter like I attempted to do with The Mortal
 Instruments. Cannot wait to read The Crooked Kingdom.
+
+
+## Crooked Kingdom
+
+Yeah so I decided writing out my thoughts just after each chapter would be a
+good idea to manitain the flow and re-read it anytime later to look back at how
+I felt about the story.
+
+### Chapter 1
+
+So Retvenko is a Squaller going for a voyage from Ketterdam to gain some money
+which he can use to return to Ravka. But a couple of Shu people (most probably
+Grisha under the influence of *jurda parem*) abduct him. Most likely, it is
+under Van Eck's orders. Maybe he is trying to build anarmy of Grisha soldires
+with extraordinary powers with the help of *jurda parem*.
+
+### Chapter 2
+
+We're back in business with the heist. This chapter is written from Wylan's
+perspective. They are stalling Cornelis Smeet to stay at the gambling den so
+that Kaz and Wylan can serach his house for documents. Smeet is Van Eck's
+lawyer and has all the information on his public and private properties - that
+is the possible locations of Inej. Nina is using her charms while Jesper is
+gambling his guns to stall him (I hope he doesn't lose them). Anyway, it is
+mentioned twice that Nina has recovered from her addiction (not clearly
+mentioned but I hope so that's the case). Kaz says he has figured out the
+location from their search. The encounter between Kaz and Smet's daughter was
+amazing.
+
+### Chapter 3
+
+So the collision between Kaz and Smeet was to plant the whistle back in Smeet's
+possession. Typical Kaz. All of them are now there in the cemetry planning
+their next move. Kuwei wants to go to Ravka but Kaz insists upon the Southern
+Colonies. No one can stop Kaz from getting what he wants. Kaz is so bitter to
+Kuwei (I mean he is the same way to everyone else too). I know that all he
+wants is to protect the boy but still. My respect goes out to Muzzen. No
+mourners. No funerals. I actually was wondering at the end of the first book
+that what had happened to him. The Shus, the Fjerdan's, the people from Novyi
+Zem and what not are all after Kaz and Kuwei. And Jesper's father turns up? I
+hope he is not harmed.
+
+### Chapter 4
+
+Woah. A lot of things happened with Inej. She was brought to some place by Van
+Eck where she is being held captive. There's a guy called Bajan who looks after
+her meals and well-being. He is Suli like her and is nothing but kind to her.
+But Inej doesn't admire his kindness since he is working for Van Eck and all of
+it could easily be an act - working with Kaz she has learnt the ways of the
+Barrel and of Ketterdam. And most of her doesn't believe that Kaz will come to
+rescue her but there's one small part that is still hopeful.
+
+### Chapter 5
+
+Jesper goes to the university with Wylan by his side to meet his father.  There
+is a huge contrast in the Barrell and the area around the university. We get to
+kow some of Jesper's history. He had come to one of the gambling dens with his
+new friends from the university for a night of fun but had failed to turn back
+towards the gambling dens since then. As soon as he exchanges greetings with
+his father, they get ambushed by some gang (multiple gangs?) and have to run
+for their lives through a secret passage that Wylan accidentally knows of.
+
+### Chapter 6
+
+So Jesper's *Da* is brought to their hideout where they all back Jesper against
+his father by saying that Jesper and they were mislead into this situation by
+someone and they are trying their best to make it right. Kaz assures Jesper's
+father that he will set everything alright withing three days of time. Since
+this chapter is from Nina's perspective, we gain details of what happened to
+her after her first dose of *parem*. She hasn't completely recovered. There are
+phases when she craves it and wants to kill anyone denying her *parem* and she
+hates herself for her behaviour and her inability to control. There's a moment
+when she realises that Jesper is the only one with a family and wishes if
+Jesper's *Da* could become a fatherly figure for all of them and take them all
+away somewhere far from Ketterdam. This is much relatable to real life. Anyway,
+they are approaching the location where Inej is kept and Nina uses some unknown
+power to kill the guards (while she was trying her best to just silence them).
