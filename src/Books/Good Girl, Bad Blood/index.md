@@ -2,7 +2,7 @@
 
 The first book was so good, I was kind of skeptical about the second book since I did not want to ruin the experience from the first one.
 I am ashamed that I had such a disgusting thought in my mind.
-The is the perfect sequel that could be wrtitten to the first book.
+This is the perfect sequel that could be wrtitten to the first book.
 
 So Connor's older brother Jamie goes missing. Well, since he had gone missing before too, I thought Pip taking Connor's requests seriously
 was a bit too much. I kind of felt that she wanted to live up the reputation that she had created of herself a couple of months back, which by the way is not a bad thing.
