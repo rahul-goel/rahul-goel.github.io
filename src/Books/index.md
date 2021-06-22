@@ -25,6 +25,7 @@ Books Read:
 	- Ruin and Rising
 - Six of Crows Duology
 	- Six of Crows
+	- Crooked Kingdom
 
 Being a novice reader, I have no right to pass a comment on the books. These are not reviews. Just thoughts after reading the books.
 
