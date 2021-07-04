@@ -1,0 +1,9 @@
+.site-title * {
+	font-size: 3rem;
+	text-decoration: none;
+}
+
+.site-title:hover * {
+	font-size: 3rem;
+	text-decoration: none;
+}
