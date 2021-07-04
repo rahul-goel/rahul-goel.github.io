@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sxix of Crows Duology"
+title:  "Six of Crows Duology"
 date:   2021-06-22 11:20:29 +0530
 categories: books
 ---
