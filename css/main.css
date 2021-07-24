@@ -6,3 +6,5 @@
 {% include css/home.css %}
 {% include css/nav.css %}
 {% include css/footer.css %}
+{% include css/code.css %}
+{% include css/image.css %}

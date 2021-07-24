@@ -60,3 +60,5 @@ Here, I also maintain the list of books that I've read. I recently got into the 
 
 - Millenium
 	- The Girl With The Dragon Tattoo
+	- The Girl Who Played With Fire
+	- The Girl Who Kicked the Hornets's Nest
