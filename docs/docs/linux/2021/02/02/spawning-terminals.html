@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Spawning Multiple Terminals in one Directory</title>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<h1 class="site-title"><a href="/">&#127759; rahul-goel.github.io</a></h1>
+<nav class="nav">
+	&#127968; <a href="/">Home</a> |
+	&#128214; <a href="/booklist">BookList</a> |
+	&#128195; <a href="/about">About</a> |
+	<img class="rss-icon" src=/assets/rss.png> <a href="/feed.xml">RSS</a>
+</nav>
+
+
+
+		<h2 class="blog-title">Spawning Multiple Terminals in one Directory</h2>
+
+<div class="post-content">
+<p>It is hardly the case when programming involves editing a single file. On whatever medium to big sized projects that I’ve worked upon, atleast 3 files are needed to be opened at once either to edit or for reference.
+Add running docker instances and autorun servers, the number shoots up to 7 to 8.</p>
+
+<p>When the project directory is located 4 to 5 levels deep from the home directory, one has to open 7 to 8 terminals and <code class="language-plaintext highlighter-rouge">cd</code> into them one by one. Repeating this several times should indicate that a better way should exist and should be used.</p>
+
+<p>I wrote a simple shell script and combined it with dmenu, dwm and zsh to open any number of terminals in any directory within 2 seconds.</p>
+
+<p>Let’s call this script <code class="language-plaintext highlighter-rouge">opendir</code>.</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="c"># Search for non hidden directories further down from home.</span>
+<span class="nb">export </span><span class="nv">ST_PATH</span><span class="o">=</span><span class="si">$(</span>find ~ <span class="nt">-not</span> <span class="nt">-path</span> <span class="s1">'*/\.*'</span> <span class="nt">-type</span> d | dmenu <span class="nt">-i</span> <span class="nt">-l</span> 5<span class="si">)</span>
+
+<span class="c"># Get the number of terminals to be spawned.</span>
+<span class="nv">num_times</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> | dmenu <span class="nt">-i</span> <span class="nt">-p</span> <span class="s2">"How many terminals? (Default - 1)"</span><span class="si">)</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="nv">$num_times</span> <span class="o">]]</span>
+<span class="k">then
+	</span><span class="nv">num_times</span><span class="o">=</span>1
+<span class="k">fi
+</span><span class="nb">echo</span> <span class="nv">$num_times</span>
+<span class="k">for</span><span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span>i&lt;<span class="nv">$num_times</span><span class="p">;</span>i++<span class="o">))</span><span class="p">;</span>
+<span class="k">do
+	</span>st <span class="nt">-e</span> zsh &amp;
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>It uses dmenu to give the user an interface to quickly select the directory. And then enter the number of terminals (default is 1).
+It says st which stands for simple terminal (or the suckless terminal as some people call it). If you use any other terminal emulator, you’ll have to replace <code class="language-plaintext highlighter-rouge">st</code> by that and the <code class="language-plaintext highlighter-rouge">-e</code> flag by your terminal’s execute flag.</p>
+
+<p>I also needed to add the following to the end of my zshrc.</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">!</span> <span class="o">[</span> <span class="nt">-z</span> <span class="nv">$ST_PATH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+</span><span class="nb">cd</span> <span class="s2">"</span><span class="nv">$ST_PATH</span><span class="s2">"</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>This is needed because I couldn’t find a way to pass the path to the directory as an argument. In the first script I am setting the environment variable <code class="language-plaintext highlighter-rouge">ST_PATH</code>. In the zshrc, I am checking that if this variable is set the open zsh and change the directory to it. In the other case, ignore it.</p>
+
+<p>I placed the opendir script in a <code class="language-plaintext highlighter-rouge">$PATH</code> directory and mapped it to the keybind <code class="language-plaintext highlighter-rouge">Mod + Shift + Return</code>. It is convenient since the keybind to open up a regular terminal is <code class="language-plaintext highlighter-rouge">Mod + Return</code>.</p>
+
+<h3 id="further-improvements">Further Improvements</h3>
+<p>The first time <code class="language-plaintext highlighter-rouge">find</code> command is run after startup, it takes up a lot of time and then it is almost instant. I did not look into it, but the reason behind this seems to be caching. Instead of waiting for 15 to 20 seconds, to run for the first time, we can make it refer to a cached list.</p>
+
+<p>We can maintain a file which contains the list of the directories that find spits out every time it is run. When spawning a new directory, we can make dmenu search from this list. And to maintain/refresh the cached list we can run a cronjob to update it every 1 hour or so.</p>
+
+<p>The cronjob will look like -</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* 1 * * * opendir_cron
+</code></pre></div></div>
+
+<p>The script opendir_cron is -</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+find ~ <span class="nt">-not</span> <span class="nt">-path</span> <span class="s1">'*/\.*'</span> <span class="nt">-type</span> d | <span class="nv">$HOME</span>/.cache/opendir_reference
+</code></pre></div></div>
+
+<p>And the updated <code class="language-plaintext highlighter-rouge">opendir</code> script is -</p>
+<div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="c"># Search for non hidden directories further down from home.</span>
+<span class="nb">export </span><span class="nv">ST_PATH</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span> <span class="nv">$HOME</span>/.cache/opendir_reference | dmenu <span class="nt">-i</span> <span class="nt">-l</span> 5<span class="si">)</span>
+
+<span class="c"># Get the number of terminals to be spawned.</span>
+<span class="nv">num_times</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> | dmenu <span class="nt">-i</span> <span class="nt">-p</span> <span class="s2">"How many terminals? (Default - 1)"</span><span class="si">)</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="nv">$num_times</span> <span class="o">]]</span>
+<span class="k">then
+	</span><span class="nv">num_times</span><span class="o">=</span>1
+<span class="k">fi
+</span><span class="nb">echo</span> <span class="nv">$num_times</span>
+<span class="k">for</span><span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span>i&lt;<span class="nv">$num_times</span><span class="p">;</span>i++<span class="o">))</span><span class="p">;</span>
+<span class="k">do
+	</span>st <span class="nt">-e</span> zsh &amp;
+<span class="k">done</span>
+</code></pre></div></div>
+
+</div>
+
+
+		<nav class="footer">
+	<img class="footer-icon" src=/assets/github.png> <a href=https://github.com/rahul-goel>GitHub</a>
+	<img class="footer-icon" src=/assets/codeforces.png> <a href=https://codeforces.com/profile/rahulgoel>CodeForces</a>
+	<img class="footer-icon" src=/assets/instagram.svg> <a href=https://instagram.com/__lankylad__>Instagram</a>
+	&#128236; rahulgoellko@gmail.com
+
+</nav>
+
+	</body>
+</html>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
